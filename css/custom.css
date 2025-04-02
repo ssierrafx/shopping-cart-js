@@ -1,0 +1,320 @@
+html {
+    font-size: 62.5%;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+h1 {
+    text-align: center;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+}
+h2 {
+    font-size: 3.6rem;
+    font-weight: 700;
+    color: #2c3e50;
+}
+h4 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+header {
+    padding: 20px 0;
+    background: white;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+@media (min-width: 750px) {
+    header {
+        text-align: left;
+    }
+}
+.borrar-curso {
+    background-color: #e74c3c;
+    border-radius: 50%;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+.borrar-curso:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/hero.jpg);
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+#encabezado {
+    margin: 40px 0;
+    position: relative;
+    padding-bottom: 15px;
+}
+#encabezado:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: #3498db;
+}
+.submenu {
+    position: relative;
+}
+
+.submenu #carrito{
+    display: none;
+}
+.submenu:hover #carrito{
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    z-index: 1;
+    background-color: white;
+    padding: 20px;
+    min-height: 400px;
+    min-width: 300px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+.vacio {
+    padding: 15px;
+    background-color: #e74c3c;
+    text-align: center;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+}
+.contenido-hero {
+    margin-top: 0;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+.contenido-hero h2 {
+    font-size: 4.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+}
+.contenido-hero p {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+.contenido-hero form {
+    position: relative;
+    margin-bottom: 0;
+}
+.contenido-hero form #buscador {
+    height: 50px;
+    margin-bottom: 0;
+    border-radius: 25px;
+    padding-left: 20px;
+    border: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    color: #000;
+}
+.contenido-hero form .submit-buscador {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    padding: 0;
+    display: block;
+    text-indent: -9999px;
+    width: 50px;
+    background-image: url(../img/lupa.png);
+    background-position: right center;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 0 25px 25px 0;
+    background-color: #3498db;
+    transition: all 0.3s ease;
+}
+.contenido-hero form .submit-buscador:hover {
+    background-color: #2980b9;
+}
+
+.barra {
+    padding: 30px 0;
+    background: linear-gradient(135deg, #3498db 0%, #2ecc71 100%);
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.barra p {
+    margin: 0;
+    color: white;
+    font-weight: 500;
+}
+.icono {
+    background-repeat: no-repeat;
+    background-position: center top;
+    padding-top: 60px;
+    background-size: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.icono:hover {
+    transform: translateY(-5px);
+}
+@media (min-width: 750px) {
+    .icono {
+        margin-bottom: 0;
+    }
+}
+.icono1 {
+    background-image: url(../img/icono1.png);
+}
+.icono2 {
+    background-image: url(../img/icono2.png);
+}
+.icono3 {
+    background-image: url(../img/icono3.png);
+}
+
+#lista-cursos .row {
+    margin-bottom: 30px;
+}
+.agregar-carrito {
+    margin: 15px 0;
+    transition: all 0.3s ease;
+}
+.agregar-carrito:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    text-align: center;
+    border: none;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+@media (min-width: 550px) {
+    .card {
+        text-align: left;
+    }
+}
+.info-card {
+    padding: 20px;
+}
+
+.info-card p, 
+.card h4 {
+    margin-bottom: 8px;
+}
+.info-card .precio {
+    text-decoration: line-through;
+    font-size: 1.6rem;
+    margin-top: 15px;
+    color: #95a5a6;
+}
+.info-card .precio span {
+    font-weight: 700;
+    font-size: 2.2rem;
+    color: #2ecc71;
+}
+
+.footer {
+    margin-top: 60px;
+    border-top: 1px solid #ecf0f1;
+    padding-top: 40px;
+    background-color: #2c3e50;
+    color: white;
+    padding-bottom: 40px;
+}
+.footer .menu a {
+    display: block;
+    margin-bottom: 12px;
+    text-decoration: none;
+    color: #ecf0f1;
+    transition: all 0.3s ease;
+}
+.footer .menu a:hover {
+    color: #3498db;
+    padding-left: 5px;
+}
+
+/* Estilos adicionales para botones */
+.button-primary {
+    background-color: #3498db;
+    border-color: #3498db;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+.button-primary:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para la tabla del carrito */
+#lista-carrito {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+#lista-carrito th {
+    background-color: #f8f9fa;
+    color: #2c3e50;
+    font-weight: 600;
+    padding: 12px 15px;
+    text-align: left;
+}
+#lista-carrito td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ecf0f1;
+}
+#lista-carrito tr:last-child td {
+    border-bottom: none;
+}
+
+/* Estilos para el botón de vaciar carrito */
+#vaciar-carrito {
+    background-color: #e74c3c;
+    color: white;
+    border-radius: 25px;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+#vaciar-carrito:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
