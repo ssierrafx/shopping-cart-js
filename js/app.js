@@ -5,6 +5,7 @@ const listaCursos = document.querySelector('#lista-cursos')
 const contenedorCarrito = document.querySelector('#lista-carrito tbody')
 const vaciarCarrito = document.querySelector('#vaciar-carrito')
 const botonBuscador = document.querySelector('#submit-buscador')
+const precioTotal = document.querySelector('#total-carrito')
 
 let articulosCarrito = []
 
@@ -18,7 +19,8 @@ function llamarEventos(){
 
     carrito.addEventListener('click', eliminarCurso);
 
-    vaciarCarrito.addEventListener('click', () => {
+    vaciarCarrito.addEventListener('click', e => {
+        e.preventDefault();
         articulosCarrito = [];
 
         carritoHtml();
@@ -89,6 +91,7 @@ function eliminarCurso(e){
     const borrar = e.target.classList.contains('borrar-curso');
 
     if(borrar){
+        e.preventDefault();
         const cursoId = e.target.getAttribute('data-id');
 
         articulosCarrito = articulosCarrito.filter(curso => curso.id !== cursoId);
@@ -102,9 +105,15 @@ function carritoHtml(){
 
     limpiarHtml();
 
+    let total = 0;
+
     // Recorremos el array y por cada elemento creamos la tabla y pintamos el html
     articulosCarrito.forEach(curso => {
         const {imagen, titulo, precio, cantidad, id} = curso
+        const precioNumerico = parseFloat(precio.replace('$', ''))
+        const precioMp = precioNumerico * cantidad
+        total += precioMp;
+
         const row = document.createElement('tr')
         row.innerHTML = `
         <td>
@@ -114,7 +123,7 @@ function carritoHtml(){
         <p>${titulo}</p>
         </td>
         <td>
-        <span>${precio}</span>
+        <span>$${precioMp.toFixed(2)}</span>
         </td>
         <td>
         ${cantidad}
@@ -124,9 +133,12 @@ function carritoHtml(){
         </td>
         `
         contenedorCarrito.appendChild(row);
-
+        
         addLocalstorage();
     })
+
+    // Mostrar el total en el span
+    precioTotal.textContent = `$${total.toFixed(2)}`;
 }
 
 function addLocalstorage(){
